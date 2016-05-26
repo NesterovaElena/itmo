@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+<html>
+<head>
+<title>Форма</title>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script src="jquery-2.2.3.min.js"></script>
+<script> 
+
+  $( function() { 
+            $('#submit').click( function() { 
+                  var var1 = $('#name').val(); 
+                  var var2 = $('#surname').val(); 
+                  var var3 = $('#sex').val(); 
+                  var var4 = $('#age').val();
+                  var var5 = $('#email').val();
+   $('#result').load( "/sam?var1="+var1+"&var2="+var2+"&var3="+var3+"&var4="+var4+"&var5="+var5); 
+  } ); 
+   } ); 
+  
+
+</script>
+
+<body>
+	<form metod="post">
+		<p>Пожалуйста, заполните поля.</p>
+		<p>
+			Имя: <input id="name" type="text" ><span></span>
+		</p>
+		<p>
+			Фамилия: <input id="surname" type="text" ><span></span>
+		</p>
+		<input id="sex" name="sex" type="radio" value="fm"> Женский 
+		<input  id="sex" name="sex" type="radio" value="m" checked>Мужской
+		<p>
+			<select id="age" name="age[]">
+				<option disabled>Ваш возраст</option>
+				<option value="21">21</option>
+				<option value="20">20</option>
+				<option value="19">19</option>
+				<option value="18">18</option>
+				<option value="20">17</option>
+				<option value="19">16</option>
+				<option value="18">15</option>
+			</select>
+		</p>
+		<p>
+			E-mail: <input id="email" type="email" ><span></span>
+		</p>
+		<p>
+			<button id="submit" type="submit" value="Отправить">Отправить</button>
+			<br>
+			<b>Результат:<b><id="result></b>
+		</p>
+		<!-- required -->
+	</form>
+</body>
+</html>
+
