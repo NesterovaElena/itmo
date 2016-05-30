@@ -1,0 +1,73 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</head>
+
+<script src="jquery-2.2.3.min.js"></script>
+<script>
+	$(function() {
+		var my_some_parameter = 1;
+		$('#answer_random').load(
+				"/HW3?my_some_parameter=" + my_some_parameter);
+		$('#ex_1_submit').click(
+				function() {
+					var my_some_parameter = 2;
+					var ex_1_integer_m = $('#ex_1_integer_m').val();
+					var ex_1_integer_n = $('#ex_1_integer_n').val();
+					$('#ex_1_answer').load(
+							"/HW3?my_some_parameter=" + my_some_parameter
+									+ "&ex_1_integer_m=" + ex_1_integer_m
+									+ "&ex_1_integer_n=" + ex_1_integer_n);
+				});
+		$('#ex_2_submit').click(
+				function() {
+					var my_some_parameter = 5;
+					var ex_2_integer_a = $('#ex_2_integer_a').val();
+					var ex_2_integer_b = $('#ex_2_integer_b').val();
+					var ex_2_integer_c = $('#ex_2_integer_c').val();
+					$('#ex_2_answer').load(
+							"/HW3?my_some_parameter=" + my_some_parameter
+									+ "&ex_2_integer_a=" + ex_2_integer_a
+									+ "&ex_2_integer_b=" + ex_2_integer_b
+									+ "&ex_2_integer_c=" + ex_2_integer_c);
+				});
+		my_some_parameter = 3;
+		$('#ex_3_answer')
+				.load("/HW3?my_some_parameter=" + my_some_parameter);
+		my_some_parameter = 4;
+		$('#ex_4_answer')
+				.load("/HW3?my_some_parameter=" + my_some_parameter);
+	});
+</script>
+<body>
+	<span style="color: green" id="answer_random"></span>
+	<form>
+		<p>Пожалуйста, введите любые 2 числа</p>
+		<p>
+			Число m : <input type="string" id="ex_1_integer_m">
+		</p>
+		<p>
+			Число n : <input type="string" id="ex_1_integer_n">
+		</p>
+	</form>
+	<button id="ex_1_submit">К 10 больше</button>
+	<span style="color: green" id="ex_1_answer"></span>
+	<form>
+		<p>Введите 3 целых числа для расчета корней уравнения ax²+bx+c=0</p>
+		<p>
+			<p>Число a : <input type="string" id="ex_2_integer_a"></p>
+			<p>Число b :
+			<input type="string" id="ex_2_integer_b"> </p>
+			<p> Число c : <input
+				type="string" id="ex_2_integer_c"></p>
+		</p>
+	</form>
+	<button id="ex_2_submit">Посчитать</button>
+	<span style="color: green" id="ex_2_answer"></span>
+	<p>Двумерный массив из 8 строк по 5 столбцов в каждой из случайных целых чисел из отрезка [10;99]. </p>
+	<span style="color: green" id="ex_3_answer"></span>
+	<p>Двумерный массив из 5 строк по 8 столбцов в каждой из случайных целых чисел из отрезка [-99;99]. </p>
+	<span style="color: green" id="ex_4_answer"></span>
+</body>
+</html>
